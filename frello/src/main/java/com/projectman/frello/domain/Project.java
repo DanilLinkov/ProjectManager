@@ -25,11 +25,6 @@ public class Project {
     @NotBlank(message = "Project description is required")
     private String description;
 
-//    @JsonFormat(pattern = "yyyy-mm-dd")
-//    private Date dateCreated;
-//    @JsonFormat(pattern = "yyyy-mm-dd")
-//    private Date dateUpdated;
-
     public Project() {
 
     }
@@ -65,31 +60,5 @@ public class Project {
     public void setDescription(String description) {
         this.description = description;
     }
-
-//    public Date getDateUpdated() {
-//        return dateUpdated;
-//    }
-//
-//    public void setDateUpdated(Date dateUpdated) {
-//        this.dateUpdated = dateUpdated;
-//    }
-//
-//    public Date getDateCreated() {
-//        return dateCreated;
-//    }
-//
-//    public void setDateCreated(Date dateCreated) {
-//        this.dateCreated = dateCreated;
-//    }
-//
-//    @PrePersist
-//    protected void onCreate(){
-//        this.dateCreated = new Date();
-//    }
-//
-//    @PreUpdate
-//    protected void onUpdate(){
-//        this.dateUpdated = new Date();
-//    }
 
 }
