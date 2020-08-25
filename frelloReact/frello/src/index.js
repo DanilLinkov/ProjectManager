@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Navbar from "./Navbar/Navbar";
+import Home from "./Home/Home";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Navbar />
+    <Home/>
   </React.StrictMode>,
   document.getElementById('root')
 );

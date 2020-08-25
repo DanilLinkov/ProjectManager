@@ -1,9 +1,12 @@
-import React from 'react';
+import React from "react";
+import Navbar from "./Navbar/Navbar";
+import Home from "./Home/Home";
 
 function App() {
   return (
-    <div >
-     
+    <div>
+      <Navbar />
+      <Home/>
     </div>
   );
 }
