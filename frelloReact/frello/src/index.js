@@ -6,6 +6,7 @@ import Home from "./Home/Home";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./redux/Store";
+import AddProject from "./Project/AddProject";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,6 +16,9 @@ ReactDOM.render(
         <Switch>
           <Route path="/" exact>
             <Home />
+          </Route>
+          <Route path="/addProject" exact>
+            <AddProject />
           </Route>
         </Switch>
       </Router>

@@ -6,8 +6,26 @@ import {
   FETCH_PROJECT_SUCCESS,
   FETCH_ERRORS,
   DELETE_PROJECT,
-  CREATE_PROJECT,
 } from "../Types/Types";
+
+export const createProject = (project) => {
+  return (dispatch) => {
+    axios
+      .post(`http://localhost:8080/api/project`, project)
+      .then((response) => {
+        dispatch({
+          type: FETCH_ERRORS,
+          payload: {},
+        });
+      })
+      .catch((errors) => {
+        dispatch({
+          type: FETCH_ERRORS,
+          payload: errors.response.data,
+        });
+      });
+  };
+};
 
 export const fetchProjects = () => {
   return (dispatch) => {
@@ -39,19 +57,14 @@ export const fetchProject = (id) => {
       type: FETCH_PROJECT_REQUEST,
     });
     axios
-        .get(`http://localhost:8080/api/project/${id}`)
-        .then((response) => {
-            const project = response.data;
-            dispatch({
-                type: FETCH_PROJECT_SUCCESS,
-                payload: project
-            });
-        })
-        .catch((errors) => {
-            
-        })
+      .get(`http://localhost:8080/api/project/${id}`)
+      .then((response) => {
+        const project = response.data;
+        dispatch({
+          type: FETCH_PROJECT_SUCCESS,
+          payload: project,
+        });
+      })
+      .catch((errors) => {});
   };
-
-
-
 };

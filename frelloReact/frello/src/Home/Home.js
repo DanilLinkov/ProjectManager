@@ -4,6 +4,8 @@ import Project from "../Project/Project";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { connect } from "react-redux";
 import { fetchProjects } from "../redux/Actions/Actions";
+import { Link } from "react-router-dom";
+import CreateProjectButton from "../Project/CreateProjectButton";
 
 const useStyles = makeStyles((theme) => ({
   projectContainer: {
@@ -24,19 +26,16 @@ const Home = ({ projects, getprojects }) => {
 
   return (
     <Grid container direction="row" className={classes.projectContainer}>
-      <Project
-        title="Test"
-        description="Lorem ipsum gasd afaw afwefawe awef awef asia aisd"
-        dueDate="25/08/20"
-      />
       {projects.map((project) => (
         <Project
           key={project.id}
           title={project.projectName}
           description={project.description}
           dueDate={project.end_date}
+          projectIdentifier={project.projectIdentifier}
         />
       ))}
+      <CreateProjectButton/>
     </Grid>
   );
 };
